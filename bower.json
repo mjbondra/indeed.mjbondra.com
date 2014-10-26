@@ -2,6 +2,7 @@
   "name": "mjbondra-indeed",
   "version": "1.0.0",
   "dependencies": {
+    "bourbon": "4.0.2",
     "html5-boilerplate": "4.3.0",
     "normalize-css": "3.0.1"
   }

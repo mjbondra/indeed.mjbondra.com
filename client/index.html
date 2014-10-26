@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-ng-app="indeed">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,8 +23,10 @@
     <meta name="msapplication-TileColor" content="#ff0000">
     <meta name="msapplication-TileImage" content="//mjbondra.com/img/fav/mstile-144x144.png">
     <meta name="msapplication-config" content="//mjbondra.com/img/fav/browserconfig.xml">
-    <script type="text/javascript" src="//www.google-analytics.com/analytics.js" async data-google-analytics="UA-55631366-1"></script>
-    <script type="text/javascript" src="/js/mjbondra.app.min.js"></script>
+    <script type="text/javascript" src="//www.google-analytics.com/analytics.js" async data-google-analytics="UA-55631366-2"></script>
+    <link href="/css/indeed.libraries.css" rel="stylesheet">
+    <link href="/css/indeed.main.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/indeed.main.min.js"></script>
     <title>Indeed</title>
   </head>
   <body>
@@ -32,11 +34,23 @@
       <h1>indeed.mjbondra.com</h1>
       <p>A sample Koa/AngularJS app for filtering indeed.com resume data.</p>
     </header>
-    <main>
-
-    </main>
+    <main data-resume-filter></main>
     <footer>
-      <p>View this project on GitHub:</p>
+      <ul>
+        <li>
+          <a href="https://github.com/mjbondra/indeed.mjbondra.com" target="_blank">
+            https://github.com/mjbondra/indeed.mjbondra.com
+          </a>
+        </li>
+        <li>
+          <a href="https://mjbondra.com" target="_blank">
+            https://mjbondra.com
+          </a>
+        </li>
+      </ul>
+      <p>
+
+      </p>
     </footer>
   </body>
 </html>

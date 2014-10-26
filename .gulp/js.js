@@ -30,18 +30,9 @@ function js (name) {
   });
   return bundle(bundler, name);
 }
-function jsApp () {
+function jsMain () {
   return js('indeed.main.js');
 }
-function jsLibraries () {
-  return js('indeed.libraries.js');
-}
-function jsAll () {
-  jsApp();
-  jsLibraries();
-}
 
-gulp.task('js', jsAll);
-gulp.task('js-app', jsApp);
-gulp.task('js-libraries', jsLibraries);
-gulp.task('js-install', ['bower'], jsAll);
+gulp.task('js', jsMain);
+gulp.task('js-install', ['bower'], jsMain);
