@@ -24,7 +24,6 @@ This app will listen to port 9998 by default. To specify a different port:
 
 ```
 export PORT="9998"
-npm start
 ```
 
 Finally, while in the project root directory:  
