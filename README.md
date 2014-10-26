@@ -4,8 +4,6 @@ A sample Koa/AngularJS app for filtering indeed.com resume data
 
 ## Dependencies
 
-### Dependencies
-
 [Node.js](https://nodejs.org/)  
 [MongoDB](http://www.mongodb.org/)  
 
@@ -20,17 +18,19 @@ brewGet is built with [Koa](http://koajs.com/), which requires Node 0.11.9 or gr
 
 ## Getting Started
 
-While in the project root directory:  
-
-```
-./data/seed indeed_dev
-npm install
-npm start
-```
+Before anything else, you must copy or rename ```/server/config/config.default.js``` to ```/server/config/config.js```. Open ```/server/config/config.js``` in your editor of choice, and replace default values where necessary.  
 
 This app will listen to port 9998 by default. To specify a different port:
 
 ```
 export PORT="9998"
+npm start
+```
+
+Finally, while in the project root directory:  
+
+```
+./data/seed indeed_dev
+npm install
 npm start
 ```

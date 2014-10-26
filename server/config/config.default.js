@@ -9,7 +9,7 @@ module.exports = {
     env: 'development',
     mongo: {
       host: 'localhost',
-      db: 'db_dev'
+      db: 'indeed_dev'
     },
     path: {
       root: root,
@@ -22,7 +22,7 @@ module.exports = {
     env: 'test',
     mongo: {
       host: 'localhost',
-      db: 'db_test'
+      db: 'indeed_test'
     },
     path: {
       root: root,
@@ -35,7 +35,7 @@ module.exports = {
     env: 'production',
     mongo: {
       host: 'localhost',
-      db: 'db_prod'
+      db: 'indeed_prod'
     },
     path: {
       root: root,
