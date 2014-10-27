@@ -2,4 +2,8 @@
 
 var angular = require('angular');
 
-angular.module('indeed.components.resumes', []);
+require('./directives');
+
+angular.module('indeed.components.resumes', [
+  'indeed.components.resumes.directives'
+]);
