@@ -1,4 +1,4 @@
-var resumes = require('../app/controllers/resumes');
+var resumes = require('../components/resumes/controllers');
 
 module.exports = function (app) {
   app.get('/api/resumes', resumes.index);
