@@ -1,19 +1,61 @@
-<article class="resume" data-ng-repeat="resume in resumes">
+<header class="search">
+  <form>
+    <h2>Search</h2>
+    <h3>General</h3>
+    <formset class="search--general">
+      <label>Search
+        <input type="text" data-ng-model="search.$">
+      </label>
+      <label>Last Name
+        <input type="text" data-ng-model="search.lastName">
+      </label>
+    </formset>
+    <h3>Education</h3>
+    <formset class="search--education">
+      <label>School
+        <input type="text" data-ng-model="searchEducation.school">
+      </label>
+      <h4>Degree (independent of school)</h4>
+      <label>
+        <input type="radio" data-ng-model="searchEducation.degree" value="bachelors"> Bachelors
+      </label>
+      <label>
+        <input type="radio" data-ng-model="searchEducation.degree" value="masters"> Masters
+      </label>
+      <label>
+        <input type="radio" data-ng-model="searchEducation.degree" value="doctorate"> Doctorate
+      </label>
+    </formset>
+    <h3>Work</h3>
+    <formset class="search--work">
+      <label>Company
+        <input type="text" data-ng-model="searchWork.company">
+      </label>
+      <label>Location
+        <input type="text" data-ng-model="searchWork.location">
+      </label>
+    </formset>
+  </form>
+  <h1>Resumes</h1>
+</header>
+<article
+  class="resume"
+  data-ng-repeat="resume in resumes | filter:search | searchEducation:searchEducation | searchWork:searchWork | orderBy:'lastName'">
   <h2 class="resume--name">{{ resume | displayName }}</h2>
   <h3 class="resume--headline">{{ resume.headline }}</h3>
-  <section class="resume--education" data-ng-if="resume.educations.length > 0">
-    <h3 class="resume--education--title">Education</h3>
-    <ul class="resume--education--list">
-      <li class="resume--education--list-item" data-ng-repeat="education in resume.educations">
-        {{ education | displayEducation }}
-      </li>
-    </ul>
-  </section>
   <section class="resume--work-experiences" data-ng-if="resume.workExperiences.length > 0">
     <h3 class="resume--work-experiences--title">Work</h3>
     <ul class="resume--work-experiences--list">
       <li class="resume--work-experiences--list-item" data-ng-repeat="work in resume.workExperiences">
         {{ work | displayWork }}
+      </li>
+    </ul>
+  </section>
+  <section class="resume--education" data-ng-if="resume.educations.length > 0">
+    <h3 class="resume--education--title">Education</h3>
+    <ul class="resume--education--list">
+      <li class="resume--education--list-item" data-ng-repeat="education in resume.educations">
+        {{ education | displayEducation }}
       </li>
     </ul>
   </section>
