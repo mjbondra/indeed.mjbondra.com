@@ -14,7 +14,7 @@ A simple Koa/AngularJS app for filtering Indeed resume data
 
 ### Dependency notes
 
-brewGet is built with [Koa](http://koajs.com/), which requires Node 0.11.9 or greater, and that Node be run with the `--harmony` flag.
+This app was built with [Koa](http://koajs.com/), which requires Node 0.11.9 or greater, and that Node be run with the `--harmony` flag.
 
 ## Getting Started
 
