@@ -1,0 +1,15 @@
+.header--title--link {
+  @extend %image-replace;
+
+  display: block;
+  margin: 0 auto;
+  height: 54px;
+  height: 5.45rem;
+  width: 125px;
+  width: 12.5rem;
+  background: {
+    image: url('http://www.indeed.com/images/job_search_indeed.png');
+    size: 125px 54px;
+    size: 12.5rem 5.45rem;
+  }
+}

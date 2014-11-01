@@ -1,0 +1,4 @@
+.label--description {
+  @include font-details($size: 12px, $color: $gray, $weight: 400, $style: italic);
+  font-size: 1.2rem;
+}

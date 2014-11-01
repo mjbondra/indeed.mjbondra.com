@@ -5,6 +5,7 @@ var angular = require('angular')
 
 app.filter('displayEducation', [function () {
   return function (education) {
+    if (!education) return '';
     var output = education.degree ? education.degree + ', ' : '';
     output += education.field;
     if (education.field && education.school)
@@ -18,6 +19,7 @@ app.filter('displayEducation', [function () {
 
 app.filter('displayName', [function () {
   return function (resume) {
+    if (!resume) return '';
     var output = resume.firstName;
     if (resume.firstName && resume.lastName)
       output += ' ';
@@ -28,6 +30,7 @@ app.filter('displayName', [function () {
 
 app.filter('displayWork', [function () {
   return function (work) {
+    if (!work) return '';
     var output = work.title;
     if (work.title && work.company)
       output += ' at ';
@@ -40,9 +43,21 @@ app.filter('displayWork', [function () {
   };
 }]);
 
+app.filter('pruneResumes', [function () {
+  return function (resumes) {
+    if (!resumes) return [];
+    var output = [];
+    var i = resumes.length;
+    while (i--)
+      if (resumes[i].lastName || resumes[i].firstName)
+        output.push(resumes[i]);
+    return output;
+  };
+}]);
+
 app.filter('searchEducation', ['combineResumeMatches', 'degreeTokens', function (combineResumeMatches, degreeTokens) {
   return function (resumes, filters) {
-    if (!filters) return resumes;
+    if (!resumes || !filters) return resumes || [];
     var degree, education, foundDegree, foundSchool, k, school
       , filtersDegree = filters.degree ?
           filters.degree :
@@ -95,13 +110,13 @@ app.filter('searchEducation', ['combineResumeMatches', 'degreeTokens', function 
 
 app.filter('searchWork', [function () {
   return function (resumes, filters) {
-    if (!filters) return resumes;
+    if (!resumes || !filters) return resumes || [];
     var company, k, location, work
       , filtersCompany = filters.company ?
-          filters.company :
+          filters.company.toLowerCase().replace(/\./g,'') :
           ''
       , filtersLocation = filters.location ?
-          filters.location :
+          filters.location.toLowerCase().replace(/\./g,'') :
           ''
       , i = resumes.length
       , matches = [];
@@ -109,8 +124,12 @@ app.filter('searchWork', [function () {
       work = resumes[i].workExperiences;
       k = work.length;
       while (k--) {
-        company = work[k].company;
-        location = work[k].location;
+        company = work[k].company ?
+          work[k].company.toLowerCase().replace(/\./g,'') :
+          '';
+        location = work[k].location ?
+          work[k].location.toLowerCase().replace(/\./g,'') :
+          '';
         if (
           (
             (

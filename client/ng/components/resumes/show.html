@@ -1,0 +1,20 @@
+<article class="resume" data-ng-if="resume">
+  <h2 class="resume--name" data-set-title>{{ resume | displayName }}</h2>
+  <h3 class="resume--headline">{{ resume.headline }}</h3>
+  <section class="resume--work-experiences" data-ng-if="resume.workExperiences.length > 0">
+    <h3 class="resume--experiences--title resume--work-experiences--title">Work</h3>
+    <ul class="resume--list resume--work-experiences--list">
+      <li class="list-item resume--work-experiences--list-item" data-ng-repeat="work in resume.workExperiences">
+        {{ work | displayWork }}
+      </li>
+    </ul>
+  </section>
+  <section class="resume--education" data-ng-if="resume.educations.length > 0">
+    <h3 class="resume--experiences--title resume--education--title">Education</h3>
+    <ul class="resume--list resume--education--list">
+      <li class="list-item resume--education--list-item" data-ng-repeat="education in resume.educations">
+        {{ education | displayEducation }}
+      </li>
+    </ul>
+  </section>
+</article>

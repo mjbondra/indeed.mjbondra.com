@@ -1,0 +1,15 @@
+.header--description {
+  margin: 10px 0;
+  margin: 1rem 0;
+}
+
+@include breakpoint($breakpoint-tablet) {
+  .header--description {
+    margin: {
+      top: 25px;
+      top: 2.5rem;
+      bottom: 25px;
+      bottom: 2.5rem;
+    }
+  }
+}

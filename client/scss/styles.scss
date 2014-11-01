@@ -26,11 +26,20 @@
     DEPENDENCIES
 \*------------------------------------*/
 
-/*--Third Party Dependencies--*/
-@import "../lib/bourbon/dist/bourbon";
+//--Third Party Variables--//
+$fa-font-path: "../lib/font-awesome/fonts";
 
-/*--App Dependencies--*/
+//--Third Party Dependencies--//
+@import "../lib/bourbon/dist/bourbon";
+@import "../lib/compass-breakpoint/stylesheets/breakpoint";
+@import "../lib/font-awesome/scss/font-awesome";
+@import "libraries/normalize"; // symlinked css as scss from ../libraries/normalize-css/normalize.css
+@import "libraries/html5-boilerplate"; // symlinked css as scss from ../libraries/html5-boilerplate/css/main.css
+
+//--App Variables--//
 @import "variables/**/*";
+
+//--App Dependencies--//
 @import "abstractions/**/*";
 
 /*------------------------------------*\

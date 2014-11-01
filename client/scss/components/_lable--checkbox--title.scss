@@ -1,0 +1,11 @@
+.label-checkbox--title {
+  @include font-details($size: 14px);
+  font-size: 1.4rem;
+}
+
+@include breakpoint($breakpoint-tablet) {
+  .label-checkbox--title {
+    @include font-details($size: 11px);
+    font-size: 1.1rem;
+  }
+}

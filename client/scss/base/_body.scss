@@ -1,0 +1,7 @@
+body {
+  @include Arial($size: 16px, $height: 1.4);
+  font-size: 1.6rem;
+
+  min-width: 320px;
+  min-width: 32rem;
+}

@@ -1,0 +1,14 @@
+.resume {
+  @extend .clearfix;
+
+  .resumes & {
+    border: {
+      top: 1px solid $gray-light;
+    }
+    padding: 0 20px;
+    padding: 0 2rem;
+    &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+}

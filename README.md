@@ -1,6 +1,6 @@
 # indeed.mjbondra.com
 
-A sample Koa/AngularJS app for filtering indeed.com resume data
+A simple Koa/AngularJS app for filtering Indeed resume data
 
 ## Dependencies
 

@@ -1,0 +1,19 @@
+.resume--name {
+  @extend .fa-file-text-o;
+  &:before {
+    @include FontAwesome();
+
+    padding: {
+      right: 15px;
+      right: 1.5rem;
+    }
+  }
+}
+
+@include breakpoint($breakpoint-tablet) {
+  .resume--name {
+    .resumes & {
+      float: left;
+    }
+  }
+}

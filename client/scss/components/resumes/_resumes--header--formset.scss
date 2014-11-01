@@ -1,0 +1,23 @@
+.resumes--header--formset {
+  @extend .clearfix;
+
+  display: block;
+}
+
+@include breakpoint($breakpoint-tablet) {
+  .resumes--header--formset {
+    float: left;
+    border: {
+      right: 1px solid $gray-light;
+    }
+    padding: 0 10px;
+    padding: 0 1rem;
+    height: 175px;
+    width: 33.3%;
+    &:last-child {
+      border: {
+        right: none;
+      }
+    }
+  }
+}

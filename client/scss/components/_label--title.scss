@@ -1,0 +1,8 @@
+.label--title {
+  @include font-details($weight: 700);
+
+  display: block;
+  margin: 2px 0;
+  margin: 0.2rem 0;
+  color: $orange;
+}

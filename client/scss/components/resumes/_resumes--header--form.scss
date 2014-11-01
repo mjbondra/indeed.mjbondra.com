@@ -1,0 +1,20 @@
+.resumes--header--form {
+  @extend .clearfix;
+
+  padding: 10px 20px 25px;
+  padding: 1rem 2rem 2.5rem;
+  background: {
+    color: $gray-lighter;
+  }
+}
+
+@include breakpoint($breakpoint-tablet) {
+  .resumes--header--form {
+    padding: {
+      right: 10px;
+      right: 1rem;
+      left: 10px;
+      left: 1rem;
+    }
+  }
+}

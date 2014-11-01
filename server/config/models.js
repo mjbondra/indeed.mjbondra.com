@@ -1,11 +1,11 @@
 // bootstrap models by specifying component names in preferred load order
-var models = [
+var components = [
   'resumes'
 ];
 
 module.exports = function (config) {
   var componentsPath = config.path.root + '/server/components/';
-  models.forEach(function (component) {
+  components.forEach(function (component) {
     require(componentsPath + component + '/model');
   });
 };

@@ -1,62 +1,50 @@
-<header class="search">
-  <form>
-    <h2>Search</h2>
-    <h3>General</h3>
-    <formset class="search--general">
-      <label>Search
-        <input type="text" data-ng-model="search.$">
-      </label>
-      <label>Last Name
-        <input type="text" data-ng-model="search.lastName">
-      </label>
-    </formset>
-    <h3>Education</h3>
-    <formset class="search--education">
-      <label>School
-        <input type="text" data-ng-model="searchEducation.school">
-      </label>
-      <h4>Degree (independent of school)</h4>
-      <label>
-        <input type="radio" data-ng-model="searchEducation.degree" value="bachelors"> Bachelors
-      </label>
-      <label>
-        <input type="radio" data-ng-model="searchEducation.degree" value="masters"> Masters
-      </label>
-      <label>
-        <input type="radio" data-ng-model="searchEducation.degree" value="doctorate"> Doctorate
-      </label>
-    </formset>
-    <h3>Work</h3>
-    <formset class="search--work">
-      <label>Company
-        <input type="text" data-ng-model="searchWork.company">
-      </label>
-      <label>Location
-        <input type="text" data-ng-model="searchWork.location">
-      </label>
-    </formset>
-  </form>
-  <h1>Resumes</h1>
-</header>
-<article
-  class="resume"
-  data-ng-repeat="resume in resumes | filter:search | searchEducation:searchEducation | searchWork:searchWork | orderBy:'lastName'">
-  <h2 class="resume--name">{{ resume | displayName }}</h2>
-  <h3 class="resume--headline">{{ resume.headline }}</h3>
-  <section class="resume--work-experiences" data-ng-if="resume.workExperiences.length > 0">
-    <h3 class="resume--work-experiences--title">Work</h3>
-    <ul class="resume--work-experiences--list">
-      <li class="resume--work-experiences--list-item" data-ng-repeat="work in resume.workExperiences">
-        {{ work | displayWork }}
-      </li>
-    </ul>
-  </section>
-  <section class="resume--education" data-ng-if="resume.educations.length > 0">
-    <h3 class="resume--education--title">Education</h3>
-    <ul class="resume--education--list">
-      <li class="resume--education--list-item" data-ng-repeat="education in resume.educations">
-        {{ education | displayEducation }}
-      </li>
-    </ul>
-  </section>
-</article>
+<section class="resumes">
+  <header class="resumes--header">
+    <h2 class="resumes--header--title" data-set-title>Resume Filters</h2>
+    <form class="resumes--header--form">
+      <formset class="resumes--header--formset resumes--header--search-general">
+        <h3 class="formset--title">General</h3>
+        <label class="resumes--header--label"><span class="label--title">Keyword(s)</span>
+          <input class="sear" type="text" data-ng-model="search.$">
+        </label>
+        <label class="resumes--header--label"><span class="label--title">Last Name</span>
+          <input type="text" data-ng-model="search.lastName">
+        </label>
+      </formset>
+      <formset class="resumes--header--formset resumes--header--search-education">
+        <h3 class="formset--title">Education</h3>
+        <label class="resumes--header--label"><span class="label--title">School</span>
+          <input type="text" data-ng-model="searchEducation.school">
+        </label>
+        <h4 class="label--title">Degree <span class="label--description">(Independent of School)</span></h4>
+        <label class="resumes--header--label-checkbox">
+          <input type="radio" data-ng-model="searchEducation.degree" value="bachelors">
+          <span class="label-checkbox--title">Bachelor's</span>
+        </label>
+        <label class="resumes--header--label-checkbox">
+          <input type="radio" data-ng-model="searchEducation.degree" value="masters">
+          <span class="label-checkbox--title">Master's</span>
+        </label>
+        <label class="resumes--header--label-checkbox">
+          <input type="radio" data-ng-model="searchEducation.degree" value="doctorate">
+          <span class="label-checkbox--title">Doctorate</span>
+        </label>
+      </formset>
+      <formset class="resumes--header--formset resumes--header--search-work-experiences">
+        <h3 class="formset--title">Work</h3>
+        <label class="resumes--header--label"><span class="label--title">Company</span>
+          <input type="text" data-ng-model="searchWork.company">
+        </label>
+        <label class="resumes--header--label"><span class="label--title">Location</span>
+          <input type="text" data-ng-model="searchWork.location">
+        </label>
+      </formset>
+    </form>
+  </header>
+  <article
+    class="resume"
+    data-ng-repeat="resume in resumes | pruneResumes | filter:search | searchEducation:searchEducation | searchWork:searchWork | orderBy:'lastName'">
+    <h2 class="resume--name"><a href="/{{ resume.resumeKey }}">{{ resume | displayName }}</a></h2>
+    <h3 class="resume--headline">{{ resume.headline }}</h3>
+  </article>
+</section>

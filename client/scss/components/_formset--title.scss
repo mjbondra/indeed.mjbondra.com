@@ -1,0 +1,4 @@
+.formset--title {
+  @include font-details($size: 14px, $color: $gray, $weight: 400, $style: italic);
+  font-size: 1.4rem;
+}

@@ -1,0 +1,8 @@
+.resumes--header--title {
+  @include font-details($size: 18px, $color: $gray, $weight: 400, $style: italic);
+  font-size: 1.8rem;
+
+  margin: {
+    bottom: 0;
+  }
+}

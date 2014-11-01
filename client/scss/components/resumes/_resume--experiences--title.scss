@@ -1,0 +1,4 @@
+.resume--experiences--title {
+  @include font-details($size: 16px, $color: $gray, $weight: 400, $style: italic);
+  font-size: 1.6rem;
+}

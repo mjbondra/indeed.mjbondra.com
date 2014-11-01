@@ -1,0 +1,13 @@
+.resume--headline {
+  @include font-details($color: $orange);
+
+  .resumes & {
+    @include font-details($size: 16px, $color: $gray, $weight: 400);
+    font-size: 1.6rem;
+
+    margin: {
+      bottom: 15px;
+      bottom: 1.5rem;
+    }
+  }
+}

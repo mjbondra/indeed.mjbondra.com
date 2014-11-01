@@ -1,0 +1,13 @@
+.resumes--header--label-checkbox {
+  display: block;
+  margin: 10px 0;
+  margin: 1rem 0;
+}
+
+@include breakpoint($breakpoint-tablet) {
+  .resumes--header--label-checkbox {
+    float: left;
+    margin: 4px 6px 0 0;
+    margin: 0.4rem 0.6rem 0 0;
+  }
+}

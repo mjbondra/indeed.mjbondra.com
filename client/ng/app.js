@@ -14,10 +14,12 @@ var angular = require('angular');
 
 // App Dependencies
 require('./components');
+require('./config');
 require('./services');
 
 // AngularJS/App modules
 angular.module('indeed', [
   'indeed.components',
+  'indeed.config',
   'indeed.services'
 ]);
