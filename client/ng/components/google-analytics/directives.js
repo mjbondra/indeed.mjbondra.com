@@ -5,11 +5,8 @@ var angular = require('angular')
 
 app.directive('googleAnalytics', ['$location', 'ga', function ($location, ga) {
   return {
-    link: function (scope, element, attributes) {
-      if ($location.host() !== 'indeed.mjbondra.com') return;
-
+    link: function (scope) {
       ga('create', scope.googleAnalytics, 'auto');
-      ga('send', 'pageview');
     },
     scope: {
       googleAnalytics: '@'
