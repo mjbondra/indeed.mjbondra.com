@@ -9,6 +9,11 @@ app.controller('resumes.index', ['$scope', 'api', function ($scope, api) {
   }).error(function () {
     $scope.resumes = [];
   });
+  $scope.clearFilters = function () {
+    $scope.search = {};
+    $scope.searchEducation = {};
+    $scope.searchWork = {};
+  };
 }]);
 
 app.controller('resumes.show', ['$location', '$routeParams', '$scope', 'api', function ($location, $routeParams, $scope, api) {

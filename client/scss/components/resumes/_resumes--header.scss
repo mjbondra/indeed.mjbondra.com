@@ -1,6 +1,3 @@
 .resumes--header {
-  margin: {
-    bottom: 20px;
-    bottom: 2rem;
-  }
+  @extend .clearfix;
 }
