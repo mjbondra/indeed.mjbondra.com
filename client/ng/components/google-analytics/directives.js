@@ -13,3 +13,16 @@ app.directive('googleAnalytics', ['$location', 'ga', function ($location, ga) {
     }
   };
 }]);
+
+app.directive('sendPageview', ['$location', 'ga', function ($location, ga) {
+  return {
+    link: function (scope, element, attributes) {
+      element.ready(function () {
+        ga('send', 'pageview', {
+          page: $location.path(),
+          title: attributes.sendPageview || element.text()
+        });
+      });
+    }
+  };
+}]);

@@ -15,14 +15,11 @@ app.directive('getTitle', ['title', function (title) {
 
 app.directive('setTitle', ['title', function (title) {
   return {
-    link: function (scope, element) {
+    link: function (scope, element, attributes) {
       element.ready(function () {
-        title.set(scope.setTitle || element.text());
+        title.set(attributes.setTitle || element.text());
         scope.$apply();
       });
-    },
-    scope: {
-      setTitle: '@'
     }
   };
 }]);

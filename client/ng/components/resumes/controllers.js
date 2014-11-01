@@ -3,8 +3,7 @@
 var angular = require('angular')
   , app = angular.module('indeed.components.resumes.controllers', []);
 
-app.controller('resumes.index', ['$location', '$scope', 'api', 'ga', function ($location, $scope, api, ga) {
-  ga('send', 'pageview', { page: $location.path() });
+app.controller('resumes.index', ['$scope', 'api', function ($scope, api) {
   api('/api/resumes').success(function (resumes) {
     $scope.resumes = resumes;
   }).error(function () {
@@ -12,11 +11,10 @@ app.controller('resumes.index', ['$location', '$scope', 'api', 'ga', function ($
   });
 }]);
 
-app.controller('resumes.show', ['$location', '$routeParams', '$scope', 'api', 'ga', function ($location, $routeParams, $scope, api, ga) {
-  ga('send', 'pageview', { page: $location.path() });
+app.controller('resumes.show', ['$location', '$routeParams', '$scope', 'api', function ($location, $routeParams, $scope, api) {
   api('/api/resumes/' + $routeParams.resume).success(function (resume) {
     $scope.resume = resume;
   }).error(function () {
-    $scope.resume = [];
+    $location.path('/');
   });
 }]);

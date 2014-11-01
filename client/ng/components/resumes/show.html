@@ -1,5 +1,5 @@
 <article class="resume" data-ng-if="resume">
-  <h2 class="resume--name" data-set-title>{{ resume | displayName }}</h2>
+  <h2 class="resume--name" data-send-pageview data-set-title>{{ resume | displayName }}</h2>
   <h3 class="resume--headline">{{ resume.headline }}</h3>
   <section class="resume--work-experiences" data-ng-if="resume.workExperiences.length > 0">
     <h3 class="resume--experiences--title resume--work-experiences--title">Work</h3>
