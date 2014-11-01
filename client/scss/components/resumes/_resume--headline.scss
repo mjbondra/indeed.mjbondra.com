@@ -11,3 +11,14 @@
     }
   }
 }
+
+@include breakpoint($breakpoint-tablet) {
+  .resume--headline {
+    .resumes & {
+      padding: {
+        top: 9px;
+        top: 0.9rem;
+      }
+    }
+  }
+}
