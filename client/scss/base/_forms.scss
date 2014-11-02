@@ -12,8 +12,8 @@ button,
 select,
 textarea { // text, select, and button inputs
   @include appearance(none);
-  border-radius: none;
-  -webkit-border-radius: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
 }
 
 input[type=text],
